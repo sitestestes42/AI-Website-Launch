@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI Website Launch — build and launch a professional website with AI through a structured, project-based system.">
+  <meta name="theme-color" content="#07080c">
+  <title>AI Website Launch — Build. Launch. Grow.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#07080c;--surface:#0d1017;--surface2:#11151e;--line:rgba(255,255,255,.10);
+      --text:#f6f7fb;--muted:#9da5b5;--accent:#b7ff4a;--accent2:#8ee000;
+      --max:1180px;--radius:22px;--shadow:0 25px 80px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",system-ui,sans-serif;background:
+      radial-gradient(circle at 75% 10%,rgba(183,255,74,.10),transparent 28rem),
+      radial-gradient(circle at 15% 30%,rgba(84,120,255,.08),transparent 25rem),var(--bg);
+      color:var(--text);line-height:1.6;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}.container{width:min(calc(100% - 40px),var(--max));margin:auto}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(7,8,12,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-family:"Space Grotesk";font-weight:700;letter-spacing:-.04em;font-size:20px}
+    .brand span{color:var(--accent)}
+    .nav-links{display:flex;gap:28px;color:#c6cbd5;font-size:14px}
+    .nav-links a:hover{color:#fff}.nav-cta{padding:11px 17px;border:1px solid rgba(183,255,74,.35);border-radius:999px;color:var(--accent);font-weight:700;font-size:14px}
+    .hero{padding:105px 0 90px;position:relative}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 11px;border:1px solid rgba(183,255,74,.25);background:rgba(183,255,74,.06);border-radius:999px;color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    h1{font-family:"Space Grotesk";font-size:clamp(48px,7vw,84px);line-height:.98;letter-spacing:-.065em;margin:22px 0}
+    h1 em{font-style:normal;color:var(--accent)}.hero-copy{font-size:19px;color:var(--muted);max-width:670px}
+    .actions{display:flex;gap:13px;flex-wrap:wrap;margin:32px 0 24px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 22px;border-radius:13px;font-weight:700;border:1px solid var(--line);transition:.2s}
+    .btn-primary{background:var(--accent);color:#080a07;box-shadow:0 10px 35px rgba(183,255,74,.15)}.btn-primary:hover{transform:translateY(-2px);background:#c7ff70}
+    .btn-ghost{background:rgba(255,255,255,.035)}.btn-ghost:hover{background:rgba(255,255,255,.07)}
+    .proof{display:flex;gap:20px;flex-wrap:wrap;color:#7f8796;font-size:13px}.proof b{color:#e9ebef}
+    .hero-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.02));border-radius:28px;padding:18px;box-shadow:var(--shadow);transform:rotate(1.2deg)}
+    .browser{background:#090b10;border:1px solid var(--line);border-radius:19px;overflow:hidden}.browser-top{height:42px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:7px;padding:0 14px}
+    .dot{width:8px;height:8px;border-radius:50%;background:#414754}.browser-body{padding:28px}.mini-label{color:var(--accent);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em}.mini-title{font-family:"Space Grotesk";font-size:32px;line-height:1;margin:10px 0}.mini-line{height:9px;background:#242a35;border-radius:99px;margin:9px 0;width:82%}.mini-line.short{width:55%}.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}.mini-box{height:85px;border-radius:13px;background:linear-gradient(145deg,#181e28,#0e1118);border:1px solid #252b36}
+    section{padding:105px 0}.section-head{max-width:730px;margin-bottom:48px}.kicker{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.section-head h2{font-family:"Space Grotesk";font-size:clamp(36px,5vw,58px);line-height:1.02;letter-spacing:-.055em;margin:12px 0}.section-head p{color:var(--muted);font-size:17px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{padding:28px 20px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat strong{display:block;font-family:"Space Grotesk";font-size:31px}.stat span{color:var(--muted);font-size:13px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border:1px solid var(--line);border-radius:var(--radius);padding:28px;min-height:220px}.card:hover{border-color:rgba(183,255,74,.25);transform:translateY(-3px);transition:.2s}.icon{width:40px;height:40px;border-radius:12px;background:rgba(183,255,74,.09);color:var(--accent);display:grid;place-items:center;font-weight:800;margin-bottom:22px}.card h3{font-family:"Space Grotesk";font-size:21px;margin-bottom:9px}.card p{color:var(--muted);font-size:14px}
+    .curriculum{display:grid;gap:10px}.module{border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:16px;overflow:hidden}.module button{width:100%;background:none;color:#fff;border:0;padding:22px 24px;display:flex;justify-content:space-between;align-items:center;font:600 16px "DM Sans";cursor:pointer;text-align:left}.module button span:last-child{color:var(--accent);font-size:22px}.lessons{display:none;padding:0 24px 22px;color:var(--muted);font-size:14px}.lessons li{margin:8px 0;list-style:none}.lessons li:before{content:"✓";color:var(--accent);margin-right:10px}.module.open .lessons{display:block}
+    .journey{display:grid;grid-template-columns:repeat(5,1fr);gap:0}.step{position:relative;padding:22px;border-top:1px solid var(--line)}.step:not(:last-child){border-right:1px solid var(--line)}.num{font-family:"Space Grotesk";font-size:14px;color:var(--accent)}.step h3{margin:22px 0 7px;font-family:"Space Grotesk"}.step p{font-size:13px;color:var(--muted)}
+    .offer{display:grid;grid-template-columns:1fr .8fr;gap:28px;align-items:stretch}.offer-main{padding:45px;border:1px solid rgba(183,255,74,.25);background:radial-gradient(circle at 80% 10%,rgba(183,255,74,.12),transparent 20rem),#0c1016;border-radius:28px}.offer-main h2{font-family:"Space Grotesk";font-size:52px;line-height:1;letter-spacing:-.05em;margin:12px 0}.offer-main p{color:var(--muted);max-width:650px}.checklist{display:grid;gap:11px;margin:25px 0}.checklist div{font-size:14px}.checklist span{color:var(--accent);margin-right:8px}.price-card{border:1px solid var(--line);border-radius:28px;background:#0c1016;padding:34px;display:flex;flex-direction:column;justify-content:center}.price{font-family:"Space Grotesk";font-size:62px;letter-spacing:-.06em}.price small{font:500 14px "DM Sans";color:var(--muted)}.price-card ul{list-style:none;color:var(--muted);margin:20px 0}.price-card li{padding:8px 0}.price-card li:before{content:"✓ ";color:var(--accent)}
+    .faq{max-width:850px}.faq-item{border-bottom:1px solid var(--line)}.faq-q{width:100%;padding:23px 0;background:none;border:0;color:#fff;text-align:left;font:600 17px "DM Sans";display:flex;justify-content:space-between;cursor:pointer}.faq-a{display:none;color:var(--muted);padding:0 0 22px;font-size:14px}.faq-item.open .faq-a{display:block}
+    .final{text-align:center;padding:120px 0}.final h2{font-family:"Space Grotesk";font-size:clamp(42px,6vw,72px);letter-spacing:-.06em;line-height:1}.final p{max-width:620px;margin:20px auto;color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:30px 0;color:#737b89;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:20px}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:900px){.hero-grid,.offer{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.journey{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat{border-bottom:1px solid var(--line)}.nav-links{display:none}}
+    @media(max-width:600px){.container{width:min(calc(100% - 28px),var(--max))}.hero{padding:75px 0}.hero-card{display:none}.cards{grid-template-columns:1fr}.journey{grid-template-columns:1fr}.journey .step{border-right:0!important}.stats{grid-template-columns:1fr 1fr}.offer-main{padding:28px}.offer-main h2{font-size:40px}.price{font-size:52px}.footer-inner{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{transition:none}}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#">AI<span>WL</span></a>
+      <div class="nav-links">
+        <a href="#method">Method</a><a href="#curriculum">Curriculum</a><a href="#outcome">Outcome</a><a href="#faq">FAQ</a>
+      </div>
+      <a class="nav-cta" href="#enroll">Start building</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">AI Website Launch · Professional Edition</div>
+          <h1>Build a website.<br><em>Ship it.</em> With AI.</h1>
+          <p class="hero-copy">A project-based system for turning an idea into a polished, responsive, accessible and production-ready website — without spending months learning to code.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#enroll">Get instant access →</a>
+            <a class="btn btn-ghost" href="#curriculum">Explore the curriculum</a>
+          </div>
+          <div class="proof"><span><b>12 modules</b> · structured path</span><span><b>100+ prompts</b> · reusable</span><span><b>1 capstone</b> · publish it</span></div>
+        </div>
+        <div class="hero-card reveal" aria-label="Course project preview">
+          <div class="browser">
+            <div class="browser-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+            <div class="browser-body">
+              <div class="mini-label">Nova Coffee · Final Build</div>
+              <div class="mini-title">Made for people<br>who care about craft.</div>
+              <div class="mini-line"></div><div class="mini-line short"></div>
+              <div class="mini-grid"><div class="mini-box"></div><div class="mini-box"></div><div class="mini-box"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats reveal">
+        <div class="stat"><strong>12</strong><span>deep-dive modules</span></div>
+        <div class="stat"><strong>100+</strong><span>production prompts</span></div>
+        <div class="stat"><strong>90/100</strong><span>target QA score</span></div>
+        <div class="stat"><strong>1</strong><span>real capstone website</span></div>
+      </div>
+    </div>
+
+    <section id="method">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">The system</div><h2>AI is the tool.<br>Judgment is the skill.</h2><p>Instead of generating random pages and hoping they look good, you learn a repeatable workflow for planning, building, testing and shipping.</p></div>
+        <div class="cards">
+          <article class="card reveal"><div class="icon">01</div><h3>Strategy first</h3><p>Define the audience, value proposition, conversion goal, sitemap and content before touching the implementation.</p></article>
+          <article class="card reveal"><div class="icon">02</div><h3>Design with intent</h3><p>Build a visual system around hierarchy, typography, spacing, color, interaction and responsive behavior.</p></article>
+          <article class="card reveal"><div class="icon">03</div><h3>Build with AI</h3><p>Use structured prompts for architecture, implementation, debugging, refactoring, copy and iteration.</p></article>
+          <article class="card reveal"><div class="icon">04</div><h3>Quality control</h3><p>Audit accessibility, responsiveness, SEO, performance, UX and technical integrity before launch.</p></article>
+          <article class="card reveal"><div class="icon">05</div><h3>Ship for real</h3><p>Connect the domain, deploy the project, test the production build and establish a maintenance workflow.</p></article>
+          <article class="card reveal"><div class="icon">06</div><h3>Keep improving</h3><p>Turn one launch into a repeatable system you can use for personal projects, businesses and freelance work.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="curriculum">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">Curriculum</div><h2>From blank screen<br>to live website.</h2><p>Every module has a practical deliverable. You don't just watch — you build.</p></div>
+        <div class="curriculum">
+          <div class="module open reveal"><button><span>00 · Welcome to AI Website Launch</span><span>−</span></button><ul class="lessons"><li>How the program works</li><li>Project setup</li><li>The Think → Plan → Prompt → Build → Test → Ship workflow</li></ul></div>
+          <div class="module reveal"><button><span>01 · How Modern Websites Work</span><span>+</span></button><ul class="lessons"><li>HTML, CSS, JavaScript and browsers</li><li>Domains, hosting, DNS and HTTPS</li><li>Static vs dynamic architecture</li></ul></div>
+          <div class="module reveal"><button><span>02 · AI Fundamentals for Web Creation</span><span>+</span></button><ul class="lessons"><li>Context, constraints and structured prompting</li><li>Prompt chaining and debugging</li><li>Preventing AI drift and hallucinations</li></ul></div>
+          <div class="module reveal"><button><span>03 · Website Strategy</span><span>+</span></button><ul class="lessons"><li>Audience and positioning</li><li>Conversion goals and user journeys</li><li>Sitemap and content strategy</li></ul></div>
+          <div class="module reveal"><button><span>04 · Premium Web Design</span><span>+</span></button><ul class="lessons"><li>Hierarchy, typography, color and grids</li><li>Components, CTAs and forms</li><li>Building a coherent design system</li></ul></div>
+          <div class="module reveal"><button><span>05 · Building With AI</span><span>+</span></button><ul class="lessons"><li>Project architecture</li><li>Core sections and internal pages</li><li>Interactions and animation</li></ul></div>
+          <div class="module reveal"><button><span>06 · Responsive Design</span><span>+</span></button><ul class="lessons"><li>Mobile-first thinking</li><li>Breakpoints, typography and images</li><li>Real-device QA</li></ul></div>
+          <div class="module reveal"><button><span>07 · Accessibility & Quality</span><span>+</span></button><ul class="lessons"><li>Semantic HTML and keyboard navigation</li><li>Forms, labels, contrast and focus</li><li>Accessibility audit</li></ul></div>
+          <div class="module reveal"><button><span>08 · SEO & Performance</span><span>+</span></button><ul class="lessons"><li>Search intent and metadata</li><li>Images, scripts and loading</li><li>Performance testing</li></ul></div>
+          <div class="module reveal"><button><span>09 · Advanced AI Workflow</span><span>+</span></button><ul class="lessons"><li>AI as developer, designer, copywriter and QA</li><li>Code review and refactoring</li><li>Maintaining context across iterations</li></ul></div>
+          <div class="module reveal"><button><span>10 · Production Website</span><span>+</span></button><ul class="lessons"><li>Environment and deployment</li><li>Domain, HTTPS, forms and analytics</li><li>Production checklist</li></ul></div>
+          <div class="module reveal"><button><span>11 · The 100-Point Website Audit</span><span>+</span></button><ul class="lessons"><li>Design, UX and technical scoring</li><li>Accessibility, SEO and performance</li><li>90+ launch target</li></ul></div>
+          <div class="module reveal"><button><span>12 · Capstone Project</span><span>+</span></button><ul class="lessons"><li>Build your own complete website</li><li>Publish it to the internet</li><li>Complete the final audit</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="outcome">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">The transformation</div><h2>Learn the workflow.<br>Keep the skill.</h2><p>The goal isn't one pretty website. It's a system you can reuse for your next project.</p></div>
+        <div class="journey reveal">
+          <div class="step"><div class="num">01</div><h3>Think</h3><p>Turn a vague idea into a clear business and user problem.</p></div>
+          <div class="step"><div class="num">02</div><h3>Plan</h3><p>Define architecture, content, design and success criteria.</p></div>
+          <div class="step"><div class="num">03</div><h3>Build</h3><p>Use AI to accelerate implementation without surrendering judgment.</p></div>
+          <div class="step"><div class="num">04</div><h3>Test</h3><p>Find visual, technical, accessibility and performance problems.</p></div>
+          <div class="step"><div class="num">05</div><h3>Ship</h3><p>Deploy, connect the domain and make the project production-ready.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="enroll">
+      <div class="container">
+        <div class="offer reveal">
+          <div class="offer-main">
+            <div class="kicker">Early launch</div>
+            <h2>Build something<br>worth showing.</h2>
+            <p>Get the complete AI Website Launch system, project workflow and production resources in one focused program.</p>
+            <div class="checklist">
+              <div><span>✓</span>12 structured modules + capstone</div>
+              <div><span>✓</span>100+ reusable AI prompts</div>
+              <div><span>✓</span>Premium starter project</div>
+              <div><span>✓</span>100-point quality checklist</div>
+              <div><span>✓</span>Website copy and strategy templates</div>
+              <div><span>✓</span>Deployment and launch workflow</div>
+            </div>
+            <a class="btn btn-primary" href="#" onclick="alert('Connect this button to your Hotmart checkout URL.');return false;">Get instant access →</a>
+          </div>
+          <aside class="price-card">
+            <div class="kicker">Launch price</div>
+            <div class="price">$12.90 <small>USD</small></div>
+            <p style="color:var(--muted);font-size:13px">One-time purchase · digital access</p>
+            <ul><li>Full course framework</li><li>Templates & prompts</li><li>Capstone project</li><li>Lifetime access to purchased materials</li></ul>
+            <a class="btn btn-primary" href="#" onclick="alert('Connect this button to your Hotmart checkout URL.');return false;">Start building</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">Questions</div><h2>No mystery.<br>Just a clear path.</h2></div>
+        <div class="faq">
+          <div class="faq-item reveal"><button class="faq-q">Do I need coding experience?<span>+</span></button><div class="faq-a">No previous professional coding experience is required. The program explains the fundamentals you need and focuses on using AI as an accelerator while you learn to inspect and improve its output.</div></div>
+          <div class="faq-item reveal"><button class="faq-q">Will I actually publish a website?<span>+</span></button><div class="faq-a">Yes. The capstone is designed around a real deployment workflow, including domain, HTTPS, responsive testing and a final quality audit.</div></div>
+          <div class="faq-item reveal"><button class="faq-q">Is this just a collection of AI prompts?<span>+</span></button><div class="faq-a">No. Prompts are only one part of the system. Strategy, design, implementation, testing and judgment are equally important.</div></div>
+          <div class="faq-item reveal"><button class="faq-q">What if AI generates broken code?<span>+</span></button><div class="faq-a">That is part of the curriculum. You learn a structured debugging workflow instead of blindly replacing the entire project whenever something breaks.</div></div>
+          <div class="faq-item reveal"><button class="faq-q">Can I use the workflow for client projects?<span>+</span></button><div class="faq-a">Yes. The course includes a client-oriented brief and workflow so the same process can be adapted for freelance and business websites.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="container reveal">
+        <div class="kicker">Your first build starts here</div>
+        <h2>Stop asking AI for a website.<br>Learn how to build one.</h2>
+        <p>A professional workflow turns AI from a novelty into a practical production tool.</p>
+        <a class="btn btn-primary" href="#enroll">Build your first website →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><span>© 2026 AI Website Launch. All rights reserved.</span><span>Built for creators, builders & future freelancers.</span></div></footer>
+
+  <script>
+    document.querySelectorAll('.module button').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const m=btn.parentElement;
+        const open=m.classList.toggle('open');
+        btn.querySelector('span:last-child').textContent=open?'−':'+';
+      });
+    });
+    document.querySelectorAll('.faq-q').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const item=btn.parentElement;
+        const open=item.classList.toggle('open');
+        btn.querySelector('span').textContent=open?'−':'+';
+      });
+    });
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+    },{threshold:.08});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>
